@@ -15,7 +15,7 @@ namespace PARSER
 
         private void LoadFiles_Click(object sender, RoutedEventArgs e)
         {
-
+            /*
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             openFileDialog.
@@ -32,7 +32,7 @@ namespace PARSER
                     // Здесь вы можете работать с содержимым DICOM файла
                 }
             }
-            
+            */S
         }
     }
 
