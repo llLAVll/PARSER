@@ -25,12 +25,17 @@
     <TextBlock>
     </TextBlock>
 
+    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+      <Button  Content="Открыть файл" Click="" />
+      <Button Content="Просмотреть" Click="" />
+    </StackPanel>
+
+    <Image Grid.Row="1" x:Name="dicomImage" Stretch="Uniform"/>
     
-    <TextBox Name="TextBox1" Text="" Grid.Row="1" Margin="10"></TextBox>
+   
     <ListBox Name="listBoxFiles" Grid.Row="0" Margin="5"/>
-    <Button  FontStyle="Oblique" Grid.Row="1" Margin="15" Padding="5" BorderBrush="Aqua" Click="LoadFiles_Click">Open DICOM Files</Button>
-    <!--Grid для клавиш-->
-    <Grid></Grid>
+    
+
   </Grid>
   
 </Window>

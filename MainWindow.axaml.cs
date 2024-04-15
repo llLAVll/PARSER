@@ -2,6 +2,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Dicom;
+using System;
 using System.IO;
 
 namespace PARSER
@@ -34,6 +35,35 @@ namespace PARSER
             //}
             
         }
+        private async void OpenFile_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filters.Add(new FileDialogFilter() { Name = "DICOM Files", Extensions = { "dcm" } });
+
+            string[] result = await dialog.ShowAsync(this);
+            if (result.Length > 0)
+            {
+                LoadDicomFile(result[0]);
+            }
+        }
+        private void ViewImage_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            // View DICOM image here
+        }
+        private void LoadDicomFile(string filePath)
+        {
+            try
+            {
+                DicomFile dicomFile = DicomFile.Open(filePath);
+                //DicomImage dicomImage = new DicomImage(dicomFile.Dataset);
+                //this.dicomImage.Source = dicomImage.RenderImage().As<Avalonia.Media.Imaging.IBitmap>();
+            }
+            catch (Exception ex)
+            {
+                // Handle exception
+                Console.WriteLine($"Error loading DICOM file: {ex.Message}");
+            }
+        }
     }
 
     public class MyView : UserControl
@@ -60,5 +90,5 @@ namespace PARSER
                 var fileContent = await streamReader.ReadToEndAsync();
             }
         }
-    }
+    }    
 }
