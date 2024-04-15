@@ -10,14 +10,27 @@
 <!--
 Сетка 
 -->
+
   <Grid>
     <Grid.RowDefinitions>
-      <RowDefinition Height="*" />
-      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="auto"/>
     </Grid.RowDefinitions>
+    
+    <!--строка меню-->
+    <Menu>
+      
+    </Menu>
+    <!-- экран-->
+    <TextBlock>
+    </TextBlock>
 
+    
+    <TextBox Name="TextBox1" Text="" Grid.Row="1" Margin="10"></TextBox>
     <ListBox Name="listBoxFiles" Grid.Row="0" Margin="5"/>
-    <Button Grid.Row="1" Margin="5" Click="LoadFiles_Click">Load DICOM Files</Button>
+    <Button  FontStyle="Oblique" Grid.Row="1" Margin="15" Padding="5" BorderBrush="Aqua" Click="LoadFiles_Click">Open DICOM Files</Button>
+    <!--Grid для клавиш-->
+    <Grid></Grid>
   </Grid>
   
 </Window>

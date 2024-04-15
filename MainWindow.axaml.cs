@@ -15,24 +15,24 @@ namespace PARSER
 
         private void LoadFiles_Click(object sender, RoutedEventArgs e)
         {
-            /*
+            
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Multiselect = true;
-            openFileDialog.
+            openFileDialog.Title = "Open Dicom files";
+            //openFileDialog.Filters.Add();
 
-            if (openFileDialog.ShowDialog() == true)
-            {
-                foreach (string filename in openFileDialog.FileNames)
-                {
-                    listBoxFiles.Items.Add(filename);
-                    // Здесь можно добавить код для обработки DICOM файла с помощью библиотеки fo-dicom
-                    // Например:
-                    // DicomFile dicomFile = DicomFile.Open(filename);
-                    // DicomDataset dataset = dicomFile.Dataset;
-                    // Здесь вы можете работать с содержимым DICOM файла
-                }
-            }
-            */S
+            //if (openFileDialog. == true)
+            //{
+            //    foreach (string filename in openFileDialog.FileNames)
+            //    {
+            //        listBoxFiles.Items.Add(filename);
+            //        // Здесь можно добавить код для обработки DICOM файла с помощью библиотеки fo-dicom
+            //        // Например:
+            //        // DicomFile dicomFile = DicomFile.Open(filename);
+            //        // DicomDataset dataset = dicomFile.Dataset;
+            //        // Здесь вы можете работать с содержимым DICOM файла
+            //    }
+            //}
+            
         }
     }
 
