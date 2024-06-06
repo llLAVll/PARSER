@@ -7,17 +7,54 @@
         Title="Parser DICOM"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
-<!--
-Сетка 
--->
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="*" />
-      <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
+  <Grid RowDefinitions="Auto,*,*">
+    <DockPanel>
+    <DockPanel
+      Margin="0,0,0,0">
+      <TabControl
+        Margin="0,1"
+        TabStripPlacement="Top">
+       
+         <TabItem Header="Файлы">
+          <StackPanel Orientation="Vertical" Spacing="8">
+            <TextBlock>Вкладка для работы с файлами DICOM </TextBlock>             
+          <Button Name="OpenBut" Margin="8,8,0,0" Content="Open Files" Click="OpenFilesClick"/>
+        </StackPanel>    
+        </TabItem>
+       
+         <TabItem Header="Изображение">
+          <StackPanel Orientation="Vertical" Spacing="8">
+            <TextBlock>Влкдака для работы со снимком DICOM</TextBlock>
+              <StackPanel Orientation="Vertical" Spacing="4">  
+              </StackPanel>
+              <Grid Grid.Row="1" ColumnDefinitions="*,Auto" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Border HorizontalAlignment="Center" Grid.Column="0" BorderThickness="1" BorderBrush="Orange" Width="500" Height="500">
+                  <Border VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" BorderThickness="1" BorderBrush="CornflowerBlue" Width="{Binding #WidthSlider.Value}" Height="{Binding #HeightSlider.Value}" >
+                    <Viewbox>
+                       <!--<Image> </Image>-->
+                      <Ellipse Width="50" Height="50" Fill="CornflowerBlue" />
+                    </Viewbox>
+                  </Border>
+                </Border>
 
-    <ListBox Name="listBoxFiles" Grid.Row="0" Margin="5"/>
-    <Button Grid.Row="1" Margin="5" Click="LoadFiles_Click">Load DICOM Files</Button>
+      <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Grid.Column="1" Margin="8,0,0,0" Width="150">
+        <TextBlock Text="Width" />
+        <Slider Minimum="10" Maximum="500" Value="100" x:Name="WidthSlider" TickFrequency="25" TickPlacement="TopLeft" />
+        <TextBlock Text="Height" />
+        <Slider Minimum="10" Maximum="500" Value="100" x:Name="HeightSlider" TickFrequency="25" TickPlacement="TopLeft" />
+      </StackPanel>
+    
+    
+    </Grid>
+          </StackPanel>
+           </TabItem>
+        
+         <TabItem Header="Другое" IsEnabled="False">
+          <TextBlock>Доп клетка</TextBlock>
+        </TabItem>
+      
+      </TabControl>
+    </DockPanel>
+    </DockPanel>
   </Grid>
-  
 </Window>
